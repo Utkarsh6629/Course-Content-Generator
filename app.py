@@ -4,7 +4,7 @@ from boltiotai import openai
 from dotenv import load_dotenv
 load_dotenv()
 
-openai.api_key = RbxdBxgrHRpKPcFllHyyY7m6aET_GHh451Ta6mlXois
+openai.api_key = os.environ['OPENAI_API_KEY']
 app = Flask(__name__)
 
 
@@ -27,9 +27,6 @@ def generate_course_content(course_title):
                     4. Assessment Methods
                     5. Recommended Readings and Textbooks"""
         }])
-    print(1)
-    print(response)
-    print(1)
     return response['choices'][0]['message']['content']
 
 
